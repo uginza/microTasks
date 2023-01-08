@@ -12,18 +12,21 @@ type TopCars = {
 export function Table(props: TableType) {
     return (
         <table>
+            <tbody>
             <tr>
-                {props.topCars.map((TopCarsObj) => {
-                    return (<td>{TopCarsObj.manufacturer}</td>)
+                {props.topCars.map((TopCarsObj, index) => {
+                    return (<td key={index}>{TopCarsObj.manufacturer}</td>)
                 })
                 }
             </tr>
             <tr>
-                {props.topCars.map((TopCarsObj) => {
-                    return (<td>{TopCarsObj.model}</td>)
+                {props.topCars.map((TopCarsObj, index) => {
+                    return (<td key={index}>{TopCarsObj.model}</td>)
                 })
                 }
             </tr>
+            </tbody>
         </table>
+
     )
 }
